@@ -1,0 +1,74 @@
+.container {
+    width: 100%;
+}
+
+#home, #areaAtuacao, #contato {
+    width: 100%;
+    min-height: 100vh;
+    scroll-margin-top: 150px;
+}
+
+/* HOME */
+#home {
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home p {
+    padding: 40px;
+    width: 80%;
+    line-height: 1.8;
+    font-size: 1.2em;
+    text-align: justify;
+    background-color: beige;
+    opacity: 0.55;
+    border-radius: 7px;
+    color: black;
+    font-weight: bold;
+    box-shadow: 10px 10px 5px 0px rgba(72, 77, 77, 0.75);
+}
+
+/* ÁREA DE ATUAÇÃO */
+#areaAtuacao {
+    background-color: #f6f6e2;
+}
+
+#areaAtuacao h1 {
+    margin-left: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.listaAreaAtuacao {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.listaAreaAtuacao article {
+    border-radius: 10px;
+    
+    padding: 20px;
+    box-shadow: 0px 10px 18px 1px rgba(72, 77, 77, 0.45);
+    background-color: white;
+    width: 25%;
+}
+
+.listaAreaAtuacao article img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+/* CONTATO */
+#contato {
+    background-color: yellow;
+}
+
+#contato h1 {
+    padding: 40px;
+    width: 80%;
+}
