@@ -50,12 +50,14 @@
 }
 
 .listaAreaAtuacao article {
+    flex: 1 1 250px; 
+    
     border-radius: 10px;
     
     padding: 20px;
     box-shadow: 0px 10px 18px 1px rgba(72, 77, 77, 0.45);
     background-color: white;
-    width: 25%;
+    
 }
 
 .listaAreaAtuacao article img {
@@ -71,4 +73,16 @@
 #contato h1 {
     padding: 40px;
     width: 80%;
+}
+
+
+#areaAtuacao h1, #contato h1 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #444;
+}
+
+html {
+    scroll-behavior: smooth;
 }
