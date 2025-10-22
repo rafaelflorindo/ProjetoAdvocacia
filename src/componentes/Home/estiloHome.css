@@ -14,6 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    filter: brightness(0.25);
 }
 
 #home p {
@@ -22,12 +23,11 @@
     line-height: 1.8;
     font-size: 1.2em;
     text-align: justify;
-    background-color: beige;
-    opacity: 0.55;
     border-radius: 7px;
-    color: black;
+    color: white;
     font-weight: bold;
     box-shadow: 10px 10px 5px 0px rgba(72, 77, 77, 0.75);
+    z-index: 8;
 }
 
 /* ÁREA DE ATUAÇÃO */
@@ -43,21 +43,19 @@
 
 .listaAreaAtuacao {
     display: flex;
+    margin: 0 auto;
     justify-content: space-evenly;
-    width: 100%;
+    width: 90%;
     flex-wrap: wrap;
     gap: 20px;
 }
 
 .listaAreaAtuacao article {
     flex: 1 1 250px; 
-    
     border-radius: 10px;
-    
     padding: 20px;
     box-shadow: 0px 10px 18px 1px rgba(72, 77, 77, 0.45);
     background-color: white;
-    
 }
 
 .listaAreaAtuacao article img {

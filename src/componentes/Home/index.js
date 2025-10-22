@@ -1,43 +1,50 @@
 import './estiloHome.css';
+import api from '../../api';
 
-import fundoHome from './fundoHome.jpg';
+import fundoHome from './man-5806012_1920.jpg';
+import { useEffect, useState } from 'react';
 function Home() {
+    const [servicos, setServicos] = useState([]);
+    const buscarServico = async () => {
+        try {
+            const resposta = await api.get("/servicos");
+            setServicos(resposta.data);
+            //console.log(resposta.data)
+        } catch (error) {
+            console.log("Erro ao buscar serviços: ", error.message);
+        }
+    };
+    useEffect(() => {
+        buscarServico()
+    }, []);
+
     return (
         <main className='container'>
             <section id="home"
                 style={
                     {
-                    backgroundImage: `url(${fundoHome})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat'
-                }
+                        backgroundImage: `url(${fundoHome})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat'
+                    }
                 }>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                <p>Seja para sua empresa ou para questões específicas pessoais, nós daremos a direção que você precisa para alcançar a melhor solução possível.</p>
             </section>
             <section id="areaAtuacao">
                 <h1>Página Área de Atuação</h1>
                 <div className='listaAreaAtuacao'>
-                    <article>
-                        <img src={fundoHome} width={300}/>
-                        <h2>Atuação 1</h2>
-                        <p>Descrição da atuação 1 Descrição da atuação 1 Descrição da atuação 1 Descrição da atuação 1</p>
-                    </article>
-                    <article>
-                        <img src={fundoHome} width={300}/>
-                        <h2>Atuação 2</h2>
-                        <p>Descrição da atuação 2</p>
-                    </article>
-                    <article>
-                        <img src={fundoHome} width={300}/>
-                        <h2>Atuação 3</h2>
-                        <p>Descrição da atuação 3</p>
-                    </article>
-                    <article>
-                        <img src={fundoHome} width={300}/>
-                        <h2>Atuação 4</h2>
-                        <p>Descrição da atuação 4</p>
-                    </article>
+                    {
+                        servicos.map(
+                            (item, index) => (
+                                <article key={index}>
+                                    <img src={fundoHome} width={300} />
+                                    <h2>{item.nome}</h2>
+                                    <p>{item.descricao}</p>
+                                </article>
+                            )
+                        )
+                    }
                 </div>
             </section>
             <section id="contato">
