@@ -38,7 +38,8 @@ function Home() {
                         servicos.map(
                             (item, index) => (
                                 <article key={index}>
-                                    <img src={`http://localhost:5000/uploads/${item.imagem}` } width='150' alt={item.nome} />
+                                    <img src={`http://localhost:5000/uploads/${item.imagem}`} 
+                                    alt={item.nome} title={item.nome} width={300} />
                                     <h2>{item.nome}</h2>
                                     <p>{item.descricao}</p>
                                 </article>

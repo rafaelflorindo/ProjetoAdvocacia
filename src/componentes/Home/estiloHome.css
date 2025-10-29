@@ -1,160 +1,86 @@
-/* ==============================
-   ESTILOS GERAIS
-============================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 .container {
     width: 100%;
-    overflow-x: hidden;
 }
 
-section {
+#home, #areaAtuacao, #contato {
     width: 100%;
     min-height: 100vh;
     scroll-margin-top: 150px;
 }
 
-/* ==============================
-   HOME
-============================== */
+/* HOME */
 #home {
     margin-top: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(0.8);
-    position: relative;
-}
-
-#home::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.45); /* leve escurecimento para melhor contraste */
-    z-index: 1;
+    filter: brightness(0.25);
 }
 
 #home p {
-    position: relative;
-    z-index: 2;
     padding: 40px;
     width: 80%;
     line-height: 1.8;
     font-size: 1.2em;
     text-align: justify;
-    border-radius: 10px;
-    color: #fff;
+    border-radius: 7px;
+    color: white;
     font-weight: bold;
-    box-shadow: 10px 10px 5px rgba(72, 77, 77, 0.75);
-    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 5px 0px rgba(72, 77, 77, 0.75);
+    z-index: 8;
 }
 
-/* ==============================
-   ÁREA DE ATUAÇÃO
-============================== */
+/* ÁREA DE ATUAÇÃO */
 #areaAtuacao {
     background-color: #f6f6e2;
-    padding-bottom: 60px;
 }
 
 #areaAtuacao h1 {
-    text-align: center;
-    font-size: 2.2em;
-    font-weight: bold;
-    color: #444;
-    padding: 60px 20px 40px;
+    margin-left: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .listaAreaAtuacao {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    width: 90%;
     margin: 0 auto;
+    justify-content: space-evenly;
+    width: 90%;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .listaAreaAtuacao article {
-    flex: 1 1 280px; 
-    max-width: 350px;
-    border-radius: 15px;
+    flex: 1 1 250px; 
+    border-radius: 10px;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 8px 20px rgba(72, 77, 77, 0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.listaAreaAtuacao article:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(72, 77, 77, 0.35);
+    box-shadow: 0px 10px 18px 1px rgba(72, 77, 77, 0.45);
+    background-color: white;
 }
 
 .listaAreaAtuacao article img {
     border-radius: 10px;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 15px;
 }
 
-.listaAreaAtuacao article h2 {
-    font-size: 1.3em;
-    color: #333;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.listaAreaAtuacao article p {
-    text-align: justify;
-    line-height: 1.6;
-    color: #555;
-}
-
-/* ==============================
-   CONTATO
-============================== */
+/* CONTATO */
 #contato {
-    background-color: #fffa9f;
-    padding-bottom: 80px;
+    background-color: yellow;
 }
 
 #contato h1 {
+    padding: 40px;
+    width: 80%;
+}
+
+
+#areaAtuacao h1, #contato h1 {
     text-align: center;
     font-size: 2em;
     font-weight: bold;
     color: #444;
-    padding: 60px 20px 40px;
 }
 
-/* ==============================
-   RESPONSIVIDADE
-============================== */
-@media (max-width: 768px) {
-    #home p {
-        width: 90%;
-        font-size: 1em;
-        padding: 25px;
-    }
-
-    .listaAreaAtuacao {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .listaAreaAtuacao article {
-        width: 90%;
-    }
+html {
+    scroll-behavior: smooth;
 }
