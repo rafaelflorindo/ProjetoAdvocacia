@@ -1,16 +1,16 @@
 import { useState } from "react"
 import api from "../../api";
-
+import { useNavigate } from 'react-router-dom';
 import "./index.css";
 
 export default function Cadastrar(){
-
+    const navigate = useNavigate();
     const[nome, setNome] = useState();
     const[descricao, setDescricao] = useState();
     const[imagem, setImagem] = useState();
 
     const cadastrarServico = async(e) =>{
-        e.preventDefault();//evitar novos envios de dados
+        e.preventDefault();
 
         if(!nome && !descricao && !imagem){
             console.log("Campos Obrigatórios");
@@ -21,14 +21,15 @@ export default function Cadastrar(){
             return;
         }
 
-        //const dados = { nome, descricao, imagem};
         try {
             const resposta = await api.post("/servico",
                 {nome, descricao, imagem}        
             );
-
+            alert("Serviço cadastrado com sucesso!");
+            navigate('/'); // vai para a página Home
         } catch (error) {
             console.log("Erro ao buscar serviços: ", error.message);
+            alert("Erro ao cadastrar serviço. Tente novamente.");
         }
     }
 
@@ -52,6 +53,5 @@ export default function Cadastrar(){
                 <button type="submit">Cadastrar Serviço</button>
             </form>    
         </>
-    )
-
+    ) 
 }

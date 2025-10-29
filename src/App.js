@@ -1,13 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-//npm install react-router-dom
-
 import Header from './componentes/Header';
 import Home from './componentes/Home';
 import Footer from './componentes/Footer';
 import Cadastrar from './componentes/Servicos/Cadastrar';
 import DetalheServico from './componentes/Servicos/DetalheServico'
-
+import ListarServicos from './componentes/Servicos/ListarServicos'
 import './App.css';
 
 function App() {
@@ -18,7 +16,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/cadastrarServico' element={<Cadastrar />} />
-          <Route path = '/listarServico/id' element={<DetalheServico />} />
+          <Route path = '/listarServicos' element={<ListarServicos />} />
+          <Route path = '/listarServico/:id' element={<DetalheServico />} />
         </Routes>        
         <Footer /> 
       </>

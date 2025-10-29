@@ -59,3 +59,67 @@ button:hover {
 button:active {
   transform: translateY(0);
 }
+
+
+/* ==============================
+   ÁREA DE ATUAÇÃO
+============================== */
+#areaAtuacao {
+  scroll-margin-top: 150px;
+  margin: 180px auto;
+  background-color: #f6f6e2;
+  padding-bottom: 60px;
+}
+
+#areaAtuacao h1 {
+  text-align: center;
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #444;
+  padding: 60px 20px 40px;
+}
+
+.listaAreaAtuacao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.listaAreaAtuacao article {
+  flex: 1 1 280px; 
+  max-width: 350px;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(72, 77, 77, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.listaAreaAtuacao article:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(72, 77, 77, 0.35);
+}
+
+.listaAreaAtuacao article img {
+  border-radius: 10px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.listaAreaAtuacao article h2 {
+  font-size: 1.3em;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.listaAreaAtuacao article p {
+  text-align: justify;
+  line-height: 1.6;
+  color: #555;
+}
